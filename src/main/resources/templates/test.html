@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>テスト画面</title>
+    <style type="text/css">
+        .toplink {
+          float:left;
+          text-decoration: none;
+          padding-left:10px;
+          padding-top:15px;
+          height :30px;
+          width: 30px;
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <script type="text/javascript">
+        function exec(){
+            console.log('start');
+            var link = document.querySelectorAll('.cardloan:not(a)');
+            console.log(link.length);
+            for( var i = 0; i < link.length; i++ ){
+              console.log(i);
+              link[i].style.display = 'none';
+            }
+            console.log('end');
+         }
+    </script>
+</head>
+<body>
+    <div align="center">
+        <div>
+            <a id="backToMenu" onclick="goBack.postMessage('backMenu');return;" class="toplink">＜</a>
+            <h1 style="float:center;">テスト3画面</h1>
+        </div>
+        <p>inputボタン</p>
+        <input id="nextCardloan1" type="button" value="進む" onclick="locatio.href='/test2'"/><br>
+        <p>aタグ</p>
+        <a id="nextCardloan" class="cardloan" href="/test2">進む</a>
+        <p>buttonタグ</p>
+        <button class="cardloan" onclick="location.href='/test2'">進む</button>
+        <p>入力</p>
+        <input class="cardloan"/>
+        <div>表示試験</div>
+<!--        <button onclick="exec();">押せ</button>-->
+    </div>
+</body>
+</html>

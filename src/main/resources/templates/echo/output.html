@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h2>出力画面</h2>
+		<div>
+			<span th:text="*{echoForm.text}"></span>
+		</div>
+		<div>
+			<a href="../index.html" th:href="@{/}">トップへ戻る</a>
+		</div>
+		<div>
+			<form th:action="@{/echo/extend}" method="POST">
+				<div><button type="submit">POST</button></div>
+			</form>
+		</div>
+	</body>
+</html>

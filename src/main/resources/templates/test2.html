@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>テスト画面</title>
+    <style type="text/css">
+        .toplink {
+          float:left;
+          text-decoration: none;
+          padding-left:10px;
+          padding-top:15px;
+          height :30px;
+          width: 30px;
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+    <div align="center">
+        <div>
+            <a id="backToMenu" onclick="goBack.postMessage('backMenu');return;" class="toplink">＜</a>
+            <h1 style="float:center;">テスト２画面</h1>
+        </div>
+        <span>inputボタン</span>
+        <input id="nextCardloan1" type="button" value="進む" class="cardloan" onclick="location.href='/test'"/><br>
+        <span>aボタン</span>
+        <a id="nextCardloan" type="button" class="cardloan" href="/test">進む</a>
+    </div>
+</body>
+</html>
