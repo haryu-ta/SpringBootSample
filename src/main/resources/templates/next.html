@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <script type="text/javascript">
+        function disp() {
+            var firstname = 'Itamura';
+            var lastname = 'Ryohei';
+            var obj = document.getElementById('nameText');
+            obj.innerText = firstname + ' ' + lastname;
+        }
+    </script>
+    <title>次画面</title>
+</head>
+<body>
+    <div align="center">
+        <div>
+            <h1 style="float:center;">次画面</h1>
+        </div>
+        <hr>
+        <h3 id="nameText"></h3>
+        <a id="goToBack" class="button button-color-red" onclick="next.postMessage('backPage');return;">戻る</a>
+        <br>
+        <a id="backMenu" class="button button-color-red">メニューに戻る</a>
+        <br>
+        <a id="goToAuth" type="button" class="button button-color-blue">認証画面へ</a>
+    </div>
+</body>
+</html>

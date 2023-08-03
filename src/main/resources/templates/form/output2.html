@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<div>
+			<h2>ファイルアップロード</h2>
+			<form method="POST" enctype="multipart/form-data" th:action="@{/form/upload}" th:object="${fileUploadForm}">
+				<input th:field="*{file}" type="file"/>
+				<br>
+				<input type="submit" value="送信"/>
+			</form>
+		</div>
+		<div>
+		    <a href="../output2.html" th:href="@{/form/output3}">次へ</a>
+		    <br>
+			<a href="../index.html" th:href="@{/}">トップへ戻る</a>
+		</div>
+	</body>
+</html>

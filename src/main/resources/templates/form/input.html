@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h2>入力画面</h2>
+		<h3 th:text="${message}"></h3>
+		<form th:action="@{/form/regist}" th:object="${accountForm}" method="POST">
+			<div>
+				<span>名前：</span>
+				<input type="text" name="name" th:field="*{name}"/>
+			</div>
+			<div>
+				<span>TEL：</span>
+				<input type="text" name="tel" th:field="*{tel}"/>
+			</div>
+			<div>
+				<span>誕生日：</span>
+				<input type="date" name="dateOfBirth" th:field="*{dateOfBirth}"/>
+			</div>
+			<div>
+				<span>E-Mail：</span>
+				<input type="email" name="email" th:field="*{email}"/>			
+			</div>
+			<div>
+				<span>給与所得者：</span>
+				<input type="checkbox" name="worker" value="会社員" th:field="*{worker}">会社員
+			</div>
+			<div>
+				<span>趣味：</span>
+				<input type="checkbox" name="hobbys" value="競馬">競馬
+				<input type="checkbox" name="hobbys" value="パチンコ">パチンコ
+				<input type="checkbox" name="hobbys" value="読書">読書
+			</div>
+			<div>
+				<span>好きな馬</span>
+				<select name="horse">
+					<option value="">---</option>
+					<option th:each="item : ${selectItems}" th:value="${item.value}" th:text="${item.key}" th:selected="${item.key} == ${defaulthorse}"></option>
+				</select>
+			</div>
+			<div>
+				<button type="submit">送信</button>
+			</div>
+		</form>		
+	</body>
+</html>

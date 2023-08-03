@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style type="text/css">
+			.error-field{color:red;}
+		</style>
+	</head>
+	<body>
+		<h2>入力画面</h2>
+		<h3 th:text="${message}"></h3>
+		<form action="./output.html" th:action="@{/echo}" th:object="${echoForm}" method="POST">
+			<div>テキストを入力して下さい</div>
+			テキスト：<input type="text" name="text" th:field="*{text}"/><br/>
+			<span th:if="${#fields.hasErrors('text')}"
+				th:errors="*{text}" th:errorclass="error-field"/></span><br th:if="${#fields.hasErrors('text')}"/>
+
+			E-Mail：<input type="text" name="email" th:field="*{email}" /><br/>
+			<span th:if="${#fields.hasErrors('email')}"
+				th:errors="*{email}" th:errorclass="error-field"></span><br th:if="${#fields.hasErrors('email')}"/>
+			<div>
+				<button type="submit">送信</button>
+			</div>
+			<a href="#" th:href="@{/echo/back}">戻る</a>
+		</form>		
+	</body>
+</html>

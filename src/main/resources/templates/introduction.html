@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>はじめに</title>
+    <style type="text/css">
+        .toplink {
+          float:left;
+          text-decoration: none;
+          padding-left:10px;
+          padding-top:15px;
+          height :30px;
+          width: 30px;
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <script type="text/javascript">
+        function dispH3() {
+            var obj = document.getElementById('nameText');
+            obj.innerText = 'itamura';
+        }
+    </script>
+</head>
+<body>
+    <div align="center">
+        <div>
+            <a id="backToMenu" onclick="goBack.postMessage('backMenu');return;" class="toplink">＜</a>
+            <h1 style="float:center;">はじめに画面</h1>
+        </div>
+        <hr>
+<!--        <input id="goToNext" type="button" value="進む" onclick="goBack.postMessage('forwardPage');"/><br>-->
+        <h3 id="nameText"></h3>
+        <input id="backMenu" type="button" class="button button-color-red" value="戻る"/><br>
+        <a id="goToNext" type="button" class="button button-color-blue" href="/next">次こそ進む</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script th:src="@{/js/amazon.connect.js}"></script>
+	</head>
+	<body>
+		<h2>Hello World!</h2>
+		<ul>
+			<li><a href="#" th:href="@{/echo}" target="_blank">エコーアプリケーションへ</a></li>
+			<li><a href="#" th:href="@{/echo/start/TIS027538/20190228}">パスパラメータ</a>	</li>
+			<li><a href="#" name="confirm" th:href="@{/echo?confirm=}">パラム</a></li>
+			<li><a href="#" th:href="@{/form/disp?key=1&value=2}">入力フォーム</a></li>
+			<li><a href="#" th:href="@{/image}">画像表示試験</a></li>
+		</ul>
+	</body>
+</html>
